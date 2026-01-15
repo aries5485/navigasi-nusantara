@@ -48,7 +48,7 @@ const HeroSection = () => {
             <Button 
               size="lg" 
               variant="outline" 
-              className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 px-8 py-6 text-lg"
+              className="border-white/50 text-white bg-white/10 hover:bg-white/20 hover:border-white/70 px-8 py-6 text-lg font-semibold backdrop-blur-sm"
             >
               Tentang Kami
             </Button>
