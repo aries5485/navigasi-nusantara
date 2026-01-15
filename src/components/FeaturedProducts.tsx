@@ -1,8 +1,9 @@
-import { ArrowRight, Map, Navigation, Waves } from "lucide-react";
+import { ArrowRight, Map, Navigation, Waves, Book } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import productEnc from "@/assets/product-enc.jpg";
 import productPaperChart from "@/assets/product-paper-chart.jpg";
 import productTidal from "@/assets/product-tidal.jpg";
+import productCatalog from "@/assets/hero-ocean.jpg";
 
 const products = [
   {
@@ -35,6 +36,16 @@ const products = [
     link: "#tidal-prediction",
     accent: "from-primary to-navy-light",
   },
+  {
+    icon: Book,
+    title: "Nautical Publication Catalog",
+    description:
+      "Katalog publikasi nautika komprehensif yang berisi informasi penting untuk keselamatan navigasi, termasuk buku panduan dan tabel teknis.",
+    image: productCatalog,
+    features: ["Regulasi Maritim", "Panduan Teknis", "Standar Internasional"],
+    link: "#publication-catalog",
+    accent: "from-primary to-accent",
+  },
 ];
 
 const FeaturedProducts = () => {
@@ -54,13 +65,13 @@ const FeaturedProducts = () => {
             Solusi Data Hidrografi Terpercaya
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Produk-produk unggulan kami mendukung keselamatan navigasi maritim dan 
+            Produk-produk unggulan kami mendukung keselamatan navigasi maritim dan
             pembangunan Indonesia
           </p>
         </div>
 
         {/* Products Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
           {products.map((product, index) => (
             <div
               key={index}
