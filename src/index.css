@@ -1,0 +1,204 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* IHDC Design System - Indonesian Hydrographic Data Center */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap');
+
+@layer base {
+  :root {
+    /* Navy Blue Primary Palette */
+    --background: 210 33% 98%;
+    --foreground: 213 50% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 213 50% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 213 50% 15%;
+
+    /* Navy Blue - #002E5C */
+    --primary: 211 100% 18%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - Lighter Navy */
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 211 100% 18%;
+
+    --muted: 210 30% 95%;
+    --muted-foreground: 213 20% 45%;
+
+    /* Orange Accent - Vibrant */
+    --accent: 28 95% 52%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 25% 88%;
+    --input: 210 25% 88%;
+    --ring: 211 100% 18%;
+
+    --radius: 0.75rem;
+
+    /* Custom Colors */
+    --navy-dark: 211 100% 12%;
+    --navy-light: 211 60% 30%;
+    --ocean-gradient-start: 211 100% 18%;
+    --ocean-gradient-end: 200 80% 35%;
+    --wave-accent: 195 85% 45%;
+    --gold-accent: 40 90% 55%;
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(211 100% 18% / 0.15);
+    --shadow-medium: 0 8px 30px -6px hsl(211 100% 18% / 0.2);
+    --shadow-strong: 0 20px 50px -12px hsl(211 100% 18% / 0.3);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 213 50% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 213 50% 12%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 213 50% 12%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 200 80% 50%;
+    --primary-foreground: 213 50% 8%;
+
+    --secondary: 213 40% 18%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 213 40% 18%;
+    --muted-foreground: 210 20% 65%;
+
+    --accent: 28 95% 52%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 213 40% 22%;
+    --input: 213 40% 22%;
+    --ring: 200 80% 50%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  .gradient-navy {
+    background: linear-gradient(135deg, hsl(var(--ocean-gradient-start)) 0%, hsl(var(--ocean-gradient-end)) 100%);
+  }
+
+  .gradient-accent {
+    background: linear-gradient(135deg, hsl(var(--accent)) 0%, hsl(var(--gold-accent)) 100%);
+  }
+
+  .text-gradient-navy {
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--wave-accent)) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-strong);
+  }
+
+  .wave-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff' fill-opacity='0.1' d='M0,128L48,138.7C96,149,192,171,288,165.3C384,160,480,128,576,128C672,128,768,160,864,186.7C960,213,1056,235,1152,218.7C1248,203,1344,149,1392,122.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+    background-size: cover;
+    background-position: bottom;
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-wave {
+    animation: wave 8s ease-in-out infinite;
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  @keyframes wave {
+    0%, 100% { transform: translateX(0) translateY(0); }
+    25% { transform: translateX(-10px) translateY(-5px); }
+    50% { transform: translateX(0) translateY(-10px); }
+    75% { transform: translateX(10px) translateY(-5px); }
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+}
