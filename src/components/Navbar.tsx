@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Search, User, Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -97,9 +98,12 @@ const Navbar = () => {
             <Button
               variant="ghost"
               size="icon"
-              className="text-primary hover:bg-primary/10"
+              className="text-primary hover:bg-primary hover:text-white transition-all duration-300"
+              asChild
             >
-              <User className="h-5 w-5" />
+              <Link to="/auth">
+                <User className="h-5 w-5" />
+              </Link>
             </Button>
           </div>
 
@@ -182,9 +186,11 @@ const Navbar = () => {
               </a>
             ))}
             <div className="pt-3 border-t border-border/50">
-              <Button variant="outline" className="w-full justify-start gap-2">
-                <User className="h-4 w-4" />
-                Masuk / Daftar
+              <Button variant="outline" className="w-full justify-start gap-2" asChild>
+                <Link to="/auth">
+                  <User className="h-4 w-4" />
+                  Masuk / Daftar
+                </Link>
               </Button>
             </div>
           </div>
