@@ -1,17 +1,14 @@
-import { MapPin, Phone, Mail, Globe } from "lucide-react";
+import { MapPin, Phone, Mail, Printer, Smartphone } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
-  const quickLinks = [
+  const services = [
     { name: "Voyage Planner", href: "#" },
-    { name: "Tidal Prediction", href: "#" },
+    { name: "Tidal Stations", href: "#" },
     { name: "Nautical Publication", href: "#" },
     { name: "E-Navigation", href: "#" },
     { name: "Maritime Safety Info", href: "#" },
-  ];
-
-  const resources = [
     { name: "3D Bathymetry", href: "#" },
     { name: "Undersea Features", href: "#" },
     { name: "Expedition Jalacitra", href: "#" },
@@ -27,55 +24,45 @@ const Footer = () => {
           {/* Logo & Description */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-full bg-accent flex items-center justify-center">
-                <span className="text-accent-foreground font-bold text-xl">I</span>
-              </div>
+              <img src="/logo.png" alt="IHDC Logo" className="w-12 h-12 object-contain bg-white rounded-full p-1" />
               <div>
                 <h3 className="text-lg font-bold">IHDC</h3>
                 <p className="text-xs text-primary-foreground/70">Indonesian Hydrographic Data Center</p>
               </div>
             </div>
             <p className="text-sm text-primary-foreground/80 leading-relaxed mb-6">
-              Pusat Data Hidrografi Indonesia di bawah Pusat Hidrografi dan 
+              Pusat Data Hidrografi Indonesia di bawah Pusat Hidrografi dan
               Oseanografi TNI Angkatan Laut (Pushidrosal).
             </p>
 
             {/* Government Logos */}
-            <div className="flex items-center gap-4">
-              <div className="w-10 h-10 rounded bg-primary-foreground/10 flex items-center justify-center text-xs font-bold">
-                TNI-AL
-              </div>
-              <div className="w-10 h-10 rounded bg-primary-foreground/10 flex items-center justify-center text-xs font-bold">
-                IHO
-              </div>
-              <div className="w-10 h-10 rounded bg-primary-foreground/10 flex items-center justify-center text-xs font-bold">
-                RI
-              </div>
+            <div className="flex flex-wrap items-center gap-3">
+              {[
+                { src: "/partners/tni-al.png", alt: "TNI AL" },
+                { src: "/partners/esdm.png", alt: "ESDM" },
+                { src: "/partners/bmkg.png", alt: "BMKG" },
+                { src: "/partners/big.png", alt: "BIG" },
+                { src: "/partners/bakamla.png", alt: "Bakamla" },
+              ].map((partner) => (
+                <div
+                  key={partner.alt}
+                  className="bg-white/10 p-2 rounded-lg hover:bg-white/20 transition-colors"
+                >
+                  <img
+                    src={partner.src}
+                    alt={partner.alt}
+                    className="h-8 w-auto object-contain"
+                  />
+                </div>
+              ))}
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h4 className="font-semibold text-lg mb-4">Layanan Utama</h4>
-            <ul className="space-y-3">
-              {quickLinks.map((link, index) => (
-                <li key={index}>
-                  <a
-                    href={link.href}
-                    className="text-sm text-primary-foreground/70 hover:text-accent transition-colors"
-                  >
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Resources */}
-          <div>
-            <h4 className="font-semibold text-lg mb-4">Sumber Daya</h4>
-            <ul className="space-y-3">
-              {resources.map((link, index) => (
+          {/* Services */}
+          <div className="lg:col-span-2">
+            <h4 className="font-semibold text-lg mb-4">Layanan Kami</h4>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-8">
+              {services.map((link, index) => (
                 <li key={index}>
                   <a
                     href={link.href}
@@ -95,26 +82,32 @@ const Footer = () => {
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
                 <span className="text-sm text-primary-foreground/80">
-                  Jl. Pantai Kuta V No.1, Ancol Timur,<br />
-                  Jakarta Utara 14430, Indonesia
-                </span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Phone className="h-5 w-5 text-accent flex-shrink-0" />
-                <span className="text-sm text-primary-foreground/80">
-                  +62 21 6403101
+                  Jl. Pantai Kuta V No.1 Ancol Timur,<br />
+                  Jakarta Utara Indonesia 14430
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-accent flex-shrink-0" />
                 <span className="text-sm text-primary-foreground/80">
-                  info@ihdc.id
+                  pusdalops@pushidrosal.id
                 </span>
               </li>
               <li className="flex items-center gap-3">
-                <Globe className="h-5 w-5 text-accent flex-shrink-0" />
+                <Phone className="h-5 w-5 text-accent flex-shrink-0" />
                 <span className="text-sm text-primary-foreground/80">
-                  www.pushidrosal.id
+                  +6221-64714810 (Setum)
+                </span>
+              </li>
+              <li className="flex items-center gap-3">
+                <Printer className="h-5 w-5 text-accent flex-shrink-0" />
+                <span className="text-sm text-primary-foreground/80">
+                  +6221-64714819 (Setum)
+                </span>
+              </li>
+              <li className="flex items-center gap-3">
+                <Smartphone className="h-5 w-5 text-accent flex-shrink-0" />
+                <span className="text-sm text-primary-foreground/80">
+                  +6252-9000-3537 (Pusdalops Jaga)
                 </span>
               </li>
             </ul>

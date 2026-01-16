@@ -17,7 +17,7 @@ const menuItems = [
       "Untuk mendukung para pelaut dalam merencanakan pelayaran secara efisien, baik itu dengan membeli peta digital (ENC) maupun peta kertas.",
   },
   {
-    name: "Tidal Prediction",
+    name: "Tidal Stations",
     href: "#tidal-prediction",
     description:
       "Menyediakan informasi terkait fenomena pasang surut air laut di Indonesia dan Rob di Teluk Jakarta.",
@@ -75,11 +75,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full gradient-navy flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-lg">
-                I
-              </span>
-            </div>
+            <img src="/logo.png" alt="IHDC Logo" className="w-10 h-10 object-contain" />
             <div className="hidden sm:block">
               <h1 className="text-lg font-bold text-primary font-sans">IHDC</h1>
               <p className="text-xs text-muted-foreground -mt-1">
